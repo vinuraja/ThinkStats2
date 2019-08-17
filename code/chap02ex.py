@@ -21,7 +21,8 @@ def Mode(hist):
 
     returns: value from Hist
     """
-    return 0
+    freq_sorted_items = AllModes(hist)
+    return freq_sorted_items[0][0]
 
 
 def AllModes(hist):
@@ -31,7 +32,7 @@ def AllModes(hist):
 
     returns: iterator of value-freq pairs
     """
-    return []
+    return sorted(hist.Items(), key=itemgetter(1), reverse=True)
 
 
 def main(script):
